@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".activites.MainActivity">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textMyNotes"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:fontFamily="@font/ubuntu_bold"
+        android:includeFontPadding="false"
+        android:text="my Notes"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20ssp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layoutSearch"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:background="@drawable/backraound_search"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/textMyNotes">
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/baseline_search_24"
+            app:tint="@color/colorSearchIcon" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_35sdp"
+            android:id="@+id/inputSearch"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:fontFamily="@font/ubuntu_regular"
+            android:background="@null"
+            android:hint="Search Notes"
+            android:imeOptions="actionDone"
+            android:importantForAutofill="no"
+            android:includeFontPadding="false"
+            android:inputType="text"
+            android:textColor="#D5C5C5"
+            android:textSize="@dimen/_13ssp"
+            android:textColorHint="@color/colorSearchIcon"/>
+
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/notesRecyclerView"
+        android:layout_marginStart="@dimen/_2sdp"
+        android:layout_marginEnd="@dimen/_2sdp"
+        android:clipToPadding="false"
+        android:paddingStart="0dp"
+        android:paddingEnd="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@id/layoutQuickactions"
+        app:layout_constraintTop_toBottomOf="@id/layoutSearch"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layoutQuickactions"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:background="#1C1A1A"
+        android:padding="@dimen/_15sdp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:id="@+id/imageAddNotes"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/baseline_add"
+            app:tint="@color/colorSearchIcon" />
+
+        <ImageView
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:id="@+id/imageAddImage"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/baseline_image_24"
+            app:tint="@color/colorSearchIcon" />
+
+
+        <ImageView
+            android:layout_marginStart="@dimen/_15sdp"
+
+            android:layout_width="@dimen/_23sdp"
+            android:layout_height="@dimen/_23sdp"
+            android:id="@+id/imageAddWepLink"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/baseline_language_24"
+            app:tint="@color/colorSearchIcon" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="@dimen/_40sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:src="@drawable/baseline_add_24"
+        android:id="@+id/imageAddNoteMain"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:background="@drawable/backraound_add_buttom"
+        android:contentDescription="@string/app_name"
+        android:padding="@dimen/_5sdp"
+        app:tint="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@id/layoutQuickactions"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/layoutQuickactions"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
